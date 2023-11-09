@@ -1,22 +1,22 @@
 {
-  "_from": "ls-instagram-api",
-  "_id": "ls-instagram-api@1.0.0",
+  "_from": "kls-instagram-api",
+  "_id": "kls-instagram-api@1.0.0",
   "_inBundle": false,
-  "_location": "/ls-instagram-api",
+  "_location": "/kls-instagram-api",
   "_phantomChildren": {},
   "_requested": {
     "type": "tag",
     "registry": true,
-    "raw": "ls-instagram-api",
-    "name": "ls-instagram-api",
-    "escapedName": "ls-instagram-api",
+    "raw": "kls-instagram-api",
+    "name": "kls-instagram-api",
+    "escapedName": "kls-instagram-api",
     "rawSpec": "",
     "saveSpec": null,
     "fetchSpec": "latest"
   },
   "author": "",
   "bugs": {
-    "url": "https://github.com/kyoumeia/ls-instagram-api.git/issues"
+    "url": "https://github.com/kyoumeia/kls-instagram-api.git/issues"
   },
   "bundleDependencies": false,
   "dependencies": {
@@ -39,14 +39,14 @@
   "engines": {
     "node": ">=12.0.0"
   },
-  "homepage": "https://github.com/kyoumeia/ls-instagram-api.git#readme",
+  "homepage": "https://github.com/kyoumeia/kls-instagram-api.git#readme",
   "keywords": [],
   "license": "MIT",
   "main": "dist/bot.js",
-  "name": "ls-instagram-api",
+  "name": "kls-instagram-api",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kyoumeia/ls-instagram-api.git"
+    "url": "https://github.com/kyoumeia/kls-instagram-api.git"
   },
   "scripts": {
     "build": "rimraf ./dist && tsc",
@@ -55,5 +55,5 @@
     "start:dev": "npx ts-node src/example.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
-  "version": "1.0.2"
+  "version": "1.0.0"
 }
