@@ -1,7 +1,7 @@
 import type { optionsInterface } from './types/bot'
 import { BROWSER } from './types/bot'
-import { chromium, firefox, webkit } from 'playwright'
-import type { BrowserType, BrowserContext, Page } from 'playwright'
+import { chromium, firefox, webkit, selectors } from 'playwright'
+import type { BrowserType, BrowserContext, Page, Selectors } from 'playwright'
 import colors from 'ansi-colors'
 
 // load actions
@@ -57,6 +57,20 @@ export default class LsInstagramBot {
   }
 
   private async _createBrowserBot() {
+    const createTagNameEngine = () => ({
+      // Returns the first element matching given selector in the root's subtree.
+      query(root: any, selector: Selectors) {
+        return root.querySelector(selector)
+      },
+      // Returns all elements matching given selector in the root's subtree.
+      queryAll(root: any, selector: Selectors) {
+        return Array.from(root.querySelectorAll(selector))
+      }
+    })
+
+    // Register the engine. Selectors will be prefixed with "tag=".
+    await selectors.register('tag', createTagNameEngine)
+
     this._createAsciiTextInConsole()
     let browserObj = { chromium, webkit, firefox }
     let browserContextName =

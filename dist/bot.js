@@ -49,6 +49,18 @@ class LsInstagramBot {
             return { ...this._defaultPrdOptions, ...options };
     }
     async _createBrowserBot() {
+        const createTagNameEngine = () => ({
+            // Returns the first element matching given selector in the root's subtree.
+            query(root, selector) {
+                return root.querySelector(selector);
+            },
+            // Returns all elements matching given selector in the root's subtree.
+            queryAll(root, selector) {
+                return Array.from(root.querySelectorAll(selector));
+            }
+        });
+        // Register the engine. Selectors will be prefixed with "tag=".
+        await playwright_1.selectors.register('tag', createTagNameEngine);
         this._createAsciiTextInConsole();
         let browserObj = { chromium: playwright_1.chromium, webkit: playwright_1.webkit, firefox: playwright_1.firefox };
         let browserContextName = this.options.storagePath + this.browserPersistentContextPrefix + '-' + this.options.botName;
